@@ -213,7 +213,7 @@ gSpecials::
 	def_special TakePokemonFromDaycare
 	def_special ScriptHatchMon
 	def_special EggHatch
-	def_special CheckDaycareMonReceivedMail
+@ 	def_special CheckDaycareMonReceivedMail
 	def_special ShowLinkBattleRecords
 	def_special IsEnoughForCostInVar0x8005
 	def_special SubtractMoneyFromVar0x8005

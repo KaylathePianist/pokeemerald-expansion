@@ -19,7 +19,7 @@ static const u32 sUnusedStructSizes[] =
     sizeof(struct SaveBlock1),
     sizeof(struct MapHeader),
  // 0x00000530, in RS
-    sizeof(struct Mail),        //or ObjectEvent / ObjectEventGraphicsInfo
+    // sizeof(struct Mail),        //or ObjectEvent / ObjectEventGraphicsInfo
     sizeof(struct Pokemon),     //or TrainerCard
     0x00000528  // 0x000004D8, in RS
 };
@@ -994,7 +994,7 @@ static const struct InGameTrade sIngameTrades[] =
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
         .heldItem = ITEM_CHESTO_BERRY,
-        .mailNum = -1,
+        // .mailNum = -1,
         .otName = _("KOBE"),
         .otGender = MALE,
         .sheen = 10,
@@ -1009,8 +1009,8 @@ static const struct InGameTrade sIngameTrades[] =
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL,
-        .mailNum = 0,
+        .heldItem = ITEM_CHESTO_BERRY,
+        // .mailNum = 0,
         .otName = _("ROMAN"),
         .otGender = MALE,
         .sheen = 10,
@@ -1025,8 +1025,8 @@ static const struct InGameTrade sIngameTrades[] =
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL,
-        .mailNum = 1,
+        .heldItem = ITEM_CHESTO_BERRY,
+        // .mailNum = 1,
         .otName = _("SKYLAR"),
         .otGender = MALE,
         .sheen = 10,
@@ -1041,8 +1041,8 @@ static const struct InGameTrade sIngameTrades[] =
         .otId = 91481,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x8B,
-        .heldItem = ITEM_RETRO_MAIL,
-        .mailNum = 2,
+        .heldItem = ITEM_CHESTO_BERRY,
+        // .mailNum = 2,
         .otName = _("ISIS"),
         .otGender = FEMALE,
         .sheen = 10,
@@ -1050,40 +1050,40 @@ static const struct InGameTrade sIngameTrades[] =
     }
 };
 
-static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
-{
-    {
-        EC_WORD_BE,
-        EC_WORD_NICE,
-        EC_WORD_TO,
-        EC_POKEMON(PLUSLE),
-        EC_WORD_EXCL,
-        EC_POKEMON(VOLBEAT),
-        EC_WORD_WILL,
-        EC_WORD_BE,
-        EC_WORD_FANTASTIC
-    }, {
-        EC_WORD_I,
-        EC_WORD_WILL,
-        EC_WORD_MAKE,
-        EC_POKEMON(BAGON),
-        EC_WORD_TOUGH,
-        EC_WORD_PLEASE,
-        EC_WORD_TRAIN,
-        EC_POKEMON(HORSEA),
-        EC_WORD_WELL
-    }, {
-        EC_WORD_THANK_YOU,
-        EC_WORD_FOR,
-        EC_POKEMON(SKITTY),
-        EC_POKEMON_NATIONAL(MEOWTH),
-        EC_WORD_CRIES,
-        EC_WORD_IN,
-        EC_WORD_A,
-        EC_WORD_CUTE,
-        EC_WORD_WAY
-    }
-};
+// static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
+// {
+//     {
+//         EC_WORD_BE,
+//         EC_WORD_NICE,
+//         EC_WORD_TO,
+//         EC_POKEMON(PLUSLE),
+//         EC_WORD_EXCL,
+//         EC_POKEMON(VOLBEAT),
+//         EC_WORD_WILL,
+//         EC_WORD_BE,
+//         EC_WORD_FANTASTIC
+//     }, {
+//         EC_WORD_I,
+//         EC_WORD_WILL,
+//         EC_WORD_MAKE,
+//         EC_POKEMON(BAGON),
+//         EC_WORD_TOUGH,
+//         EC_WORD_PLEASE,
+//         EC_WORD_TRAIN,
+//         EC_POKEMON(HORSEA),
+//         EC_WORD_WELL
+//     }, {
+//         EC_WORD_THANK_YOU,
+//         EC_WORD_FOR,
+//         EC_POKEMON(SKITTY),
+//         EC_POKEMON_NATIONAL(MEOWTH),
+//         EC_WORD_CRIES,
+//         EC_WORD_IN,
+//         EC_WORD_A,
+//         EC_WORD_CUTE,
+//         EC_WORD_WAY
+//     }
+// };
 
 static const struct WindowTemplate sTradeSequenceWindowTemplates[] =
 {

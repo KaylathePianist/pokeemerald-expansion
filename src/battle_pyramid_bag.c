@@ -1258,11 +1258,12 @@ static void Task_TossItem(u8 taskId)
 static void BagAction_Give(u8 taskId)
 {
     CloseMenuActionWindow();
-    if (ItemIsMail(gSpecialVar_ItemId) == TRUE)
-    {
-        DisplayItemMessageInBattlePyramid(taskId, gText_CantWriteMail, Task_WaitCloseErrorMessage);
-    }
-    else if (!ItemId_GetImportance(gSpecialVar_ItemId))
+    // if (ItemIsMail(gSpecialVar_ItemId) == TRUE)
+    // {
+    //     DisplayItemMessageInBattlePyramid(taskId, gText_CantWriteMail, Task_WaitCloseErrorMessage);
+    // }
+    // else if
+    if (!ItemId_GetImportance(gSpecialVar_ItemId))
     {
         gPyramidBagMenu->newScreenCallback = CB2_ChooseMonToGiveItem;
         CloseBattlePyramidBag(taskId);
@@ -1301,9 +1302,10 @@ void Task_CloseBattlePyramidBagMessage(u8 taskId)
 
 static void TryCloseBagToGiveItem(u8 taskId)
 {
-    if (!IsWritingMailAllowed(gSpecialVar_ItemId))
-        DisplayItemMessageInBattlePyramid(taskId, gText_CantWriteMail, Task_WaitCloseErrorMessage);
-    else if (!ItemId_GetImportance(gSpecialVar_ItemId))
+    // if (!IsWritingMailAllowed(gSpecialVar_ItemId))
+    //     DisplayItemMessageInBattlePyramid(taskId, gText_CantWriteMail, Task_WaitCloseErrorMessage);
+    // else if
+    if (!ItemId_GetImportance(gSpecialVar_ItemId))
         CloseBattlePyramidBag(taskId);
     else
         ShowCantHoldMessage(taskId);

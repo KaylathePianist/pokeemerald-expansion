@@ -449,16 +449,16 @@ static const struct WindowTemplate sDoWhatWithItemMsgWindowTemplate =
     .baseBlock = 0x299,
 };
 
-static const struct WindowTemplate sDoWhatWithMailMsgWindowTemplate =
-{
-    .bg = 2,
-    .tilemapLeft = 1,
-    .tilemapTop = 17,
-    .width = 18,
-    .height = 2,
-    .paletteNum = 15,
-    .baseBlock = 0x299,
-};
+// static const struct WindowTemplate sDoWhatWithMailMsgWindowTemplate =
+// {
+//     .bg = 2,
+//     .tilemapLeft = 1,
+//     .tilemapTop = 17,
+//     .width = 18,
+//     .height = 2,
+//     .paletteNum = 15,
+//     .baseBlock = 0x299,
+// };
 
 static const struct WindowTemplate sWhichMoveMsgWindowTemplate =
 {
@@ -504,16 +504,16 @@ static const struct WindowTemplate sItemGiveTakeWindowTemplate =
     .baseBlock = 0x39D,
 };
 
-static const struct WindowTemplate sMailReadTakeWindowTemplate =
-{
-    .bg = 2,
-    .tilemapLeft = 21,
-    .tilemapTop = 13,
-    .width = 8,
-    .height = 6,
-    .paletteNum = 14,
-    .baseBlock = 0x39D,
-};
+// static const struct WindowTemplate sMailReadTakeWindowTemplate =
+// {
+//     .bg = 2,
+//     .tilemapLeft = 21,
+//     .tilemapTop = 13,
+//     .width = 8,
+//     .height = 6,
+//     .paletteNum = 14,
+//     .baseBlock = 0x39D,
+// };
 
 static const struct WindowTemplate sMoveSelectWindowTemplate =
 {
@@ -655,7 +655,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_RESTORE_WHICH_MOVE]     = gText_RestoreWhichMove,
     [PARTY_MSG_BOOST_PP_WHICH_MOVE]    = gText_BoostPp,
     [PARTY_MSG_DO_WHAT_WITH_ITEM]      = gText_DoWhatWithItem,
-    [PARTY_MSG_DO_WHAT_WITH_MAIL]      = gText_DoWhatWithMail,
+    // [PARTY_MSG_DO_WHAT_WITH_MAIL]      = gText_DoWhatWithMail,
     [PARTY_MSG_ALREADY_HOLDING_ONE]    = gText_AlreadyHoldingOne,
     [PARTY_MSG_WHICH_APPLIANCE]        = gText_WhichAppliance,
     [PARTY_MSG_CHOOSE_SECOND_FUSION]   = gText_NextFusionMon,
@@ -702,9 +702,9 @@ struct
     [MENU_ITEM] = {COMPOUND_STRING("ITEM"), CursorCb_Item},
     [MENU_GIVE] = {gMenuText_Give, CursorCb_Give},
     [MENU_TAKE_ITEM] = {COMPOUND_STRING("TAKE"), CursorCb_TakeItem},
-    [MENU_MAIL] = {COMPOUND_STRING("MAIL"), CursorCb_Mail},
-    [MENU_TAKE_MAIL] = {COMPOUND_STRING("TAKE"), CursorCb_TakeMail},
-    [MENU_READ] = {COMPOUND_STRING("READ"), CursorCb_Read},
+    // [MENU_MAIL] = {COMPOUND_STRING("MAIL"), CursorCb_Mail},
+    // [MENU_TAKE_MAIL] = {COMPOUND_STRING("TAKE"), CursorCb_TakeMail},
+    // [MENU_READ] = {COMPOUND_STRING("READ"), CursorCb_Read},
     [MENU_CANCEL2] = {gText_Cancel2, CursorCb_Cancel2},
     [MENU_SHIFT] = {COMPOUND_STRING("SHIFT"), CursorCb_SendMon},
     [MENU_SEND_OUT] = {COMPOUND_STRING("SEND OUT"), CursorCb_SendMon},
@@ -733,7 +733,7 @@ static const u8 sPartyMenuAction_EnterSummaryCancel[] = {MENU_ENTER, MENU_SUMMAR
 static const u8 sPartyMenuAction_NoEntrySummaryCancel[] = {MENU_NO_ENTRY, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_StoreSummaryCancel[] = {MENU_STORE, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_GiveTakeItemCancel[] = {MENU_GIVE, MENU_TAKE_ITEM, MENU_CANCEL2};
-static const u8 sPartyMenuAction_ReadTakeMailCancel[] = {MENU_READ, MENU_TAKE_MAIL, MENU_CANCEL2};
+// static const u8 sPartyMenuAction_ReadTakeMailCancel[] = {MENU_READ, MENU_TAKE_MAIL, MENU_CANCEL2};
 static const u8 sPartyMenuAction_RegisterSummaryCancel[] = {MENU_REGISTER, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_TradeSummaryCancel1[] = {MENU_TRADE1, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMMARY, MENU_CANCEL1};
@@ -754,7 +754,7 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_STORE]         = sPartyMenuAction_StoreSummaryCancel,
     [ACTIONS_SUMMARY_ONLY]  = sPartyMenuAction_SummaryCancel,
     [ACTIONS_ITEM]          = sPartyMenuAction_GiveTakeItemCancel,
-    [ACTIONS_MAIL]          = sPartyMenuAction_ReadTakeMailCancel,
+    // [ACTIONS_MAIL]          = sPartyMenuAction_ReadTakeMailCancel,
     [ACTIONS_REGISTER]      = sPartyMenuAction_RegisterSummaryCancel,
     [ACTIONS_TRADE]         = sPartyMenuAction_TradeSummaryCancel1,
     [ACTIONS_SPIN_TRADE]    = sPartyMenuAction_TradeSummaryCancel2,
@@ -774,7 +774,7 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_STORE]         = ARRAY_COUNT(sPartyMenuAction_StoreSummaryCancel),
     [ACTIONS_SUMMARY_ONLY]  = ARRAY_COUNT(sPartyMenuAction_SummaryCancel),
     [ACTIONS_ITEM]          = ARRAY_COUNT(sPartyMenuAction_GiveTakeItemCancel),
-    [ACTIONS_MAIL]          = ARRAY_COUNT(sPartyMenuAction_ReadTakeMailCancel),
+    // [ACTIONS_MAIL]          = ARRAY_COUNT(sPartyMenuAction_ReadTakeMailCancel),
     [ACTIONS_REGISTER]      = ARRAY_COUNT(sPartyMenuAction_RegisterSummaryCancel),
     [ACTIONS_TRADE]         = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel1),
     [ACTIONS_SPIN_TRADE]    = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel2),
@@ -871,16 +871,16 @@ static const union AnimCmd sSpriteAnim_HeldItem[] =
     ANIMCMD_END
 };
 
-static const union AnimCmd sSpriteAnim_HeldMail[] =
-{
-    ANIMCMD_FRAME(1, 1),
-    ANIMCMD_END
-};
+// static const union AnimCmd sSpriteAnim_HeldMail[] =
+// {
+//     ANIMCMD_FRAME(1, 1),
+//     ANIMCMD_END
+// };
 
 static const union AnimCmd *const sSpriteAnimTable_HeldItem[] =
 {
     sSpriteAnim_HeldItem,
-    sSpriteAnim_HeldMail,
+    // sSpriteAnim_HeldMail,
 };
 
 const struct SpriteSheet gSpriteSheet_HeldItem =

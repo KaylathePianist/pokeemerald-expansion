@@ -312,13 +312,13 @@ bool8 MEScrCmd_setrecordmixinggift(struct ScriptContext *ctx)
 
 bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
 {
-    struct Mail mail;
+    // struct Mail mail;
     struct Pokemon pokemon;
     u16 species;
     u16 heldItem;
     u32 data = ScriptReadWord(ctx) - ctx->mOffset + ctx->mScriptBase;
     void *pokemonPtr = (void *)data;
-    void *mailPtr = (void *)(data + sizeof(struct Pokemon));
+    // void *mailPtr = (void *)(data + sizeof(struct Pokemon));
 
     pokemon = *(struct Pokemon *)pokemonPtr;
     species = GetMonData(&pokemon, MON_DATA_SPECIES_OR_EGG);
@@ -336,7 +336,7 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
     else
     {
         memcpy(&gPlayerParty[PARTY_SIZE - 1], pokemonPtr, sizeof(struct Pokemon));
-        memcpy(&mail, mailPtr, sizeof(struct Mail));
+        // memcpy(&mail, mailPtr, sizeof(struct Mail));
 
         if (species != SPECIES_EGG)
         {
@@ -346,8 +346,8 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
         }
 
         heldItem = GetMonData(&gPlayerParty[PARTY_SIZE - 1], MON_DATA_HELD_ITEM);
-        if (ItemIsMail(heldItem))
-            GiveMailToMon(&gPlayerParty[PARTY_SIZE - 1], &mail);
+        // if (ItemIsMail(heldItem))
+        //     GiveMailToMon(&gPlayerParty[PARTY_SIZE - 1], &mail);
         CompactPartySlots();
         CalculatePlayerPartyCount();
         StringExpandPlaceholders(gStringVar4, gText_MysteryEventSentOver);

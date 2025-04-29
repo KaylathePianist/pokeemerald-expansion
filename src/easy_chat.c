@@ -345,7 +345,7 @@ enum {
 enum {
     FRAMEID_GENERAL_2x2,
     FRAMEID_GENERAL_2x3,
-    FRAMEID_MAIL,
+    // FRAMEID_MAIL,
     FRAMEID_COMBINE_TWO_WORDS,
     FRAMEID_INTERVIEW_SHOW_PERSON,
     FRAMEID_INTERVIEW,
@@ -475,18 +475,18 @@ static const struct EasyChatScreenTemplate sEasyChatScreenTemplates[] = {
         .confirmText1 = gText_WhatYouSayIfYouLose,
         .confirmText2 = gText_IsAsShownOkay,
     },
-    {
-        .type = EASY_CHAT_TYPE_MAIL,
-        .numColumns = 2,
-        .numRows = 5,
-        .frameId = FRAMEID_MAIL,
-        .fourFooterOptions = FALSE,
-        .titleText = NULL,
-        .instructionsText1 = gText_CombineNineWordsOrPhrases,
-        .instructionsText2 = gText_AndMakeAMessage2,
-        .confirmText1 = gText_TheMailMessage,
-        .confirmText2 = gText_IsAsShownOkay,
-    },
+    // {
+    //     .type = EASY_CHAT_TYPE_MAIL,
+    //     .numColumns = 2,
+    //     .numRows = 5,
+    //     .frameId = FRAMEID_MAIL,
+    //     .fourFooterOptions = FALSE,
+    //     .titleText = NULL,
+    //     .instructionsText1 = gText_CombineNineWordsOrPhrases,
+    //     .instructionsText2 = gText_AndMakeAMessage2,
+    //     .confirmText1 = gText_TheMailMessage,
+    //     .confirmText2 = gText_IsAsShownOkay,
+    // },
     {
         .type = EASY_CHAT_TYPE_INTERVIEW,
         .numColumns = 2,
@@ -736,13 +736,13 @@ static const struct EasyChatPhraseFrameDimensions sPhraseFrameDimensions[] = {
         .height = 6,
         .footerId = FOOTER_NORMAL,
     },
-    [FRAMEID_MAIL] = {
-        .left = 3,
-        .top = 0,
-        .width = 24,
-        .height = 10,
-        .footerId = FOOTER_NORMAL,
-    },
+    // [FRAMEID_MAIL] = {
+    //     .left = 3,
+    //     .top = 0,
+    //     .width = 24,
+    //     .height = 10,
+    //     .footerId = FOOTER_NORMAL,
+    // },
     [FRAMEID_COMBINE_TWO_WORDS] = {
         .left = 3,
         .top = 5,
@@ -1474,9 +1474,9 @@ void ShowEasyChatScreen(void)
     case EASY_CHAT_TYPE_BATTLE_LOST:
         words = gSaveBlock1Ptr->easyChatBattleLost;
         break;
-    case EASY_CHAT_TYPE_MAIL:
-        words = gSaveBlock1Ptr->mail[gSpecialVar_0x8005].words;
-        break;
+    // case EASY_CHAT_TYPE_MAIL:
+    //     words = gSaveBlock1Ptr->mail[gSpecialVar_0x8005].words;
+    //     break;
     case EASY_CHAT_TYPE_BARD_SONG:
         bard = &gSaveBlock1Ptr->oldMan.bard;
         for (i = 0; i < NUM_BARD_SONG_WORDS; i ++)
@@ -1730,7 +1730,7 @@ static bool32 IsCurrentFrame2x5(void)
 {
     switch (GetEasyChatScreenFrameId())
     {
-    case FRAMEID_MAIL:
+    // case FRAMEID_MAIL:
     case FRAMEID_QUIZ_QUESTION:
     case FRAMEID_QUIZ_SET_QUESTION:
         return TRUE;
@@ -2736,10 +2736,10 @@ static void GetEasyChatConfirmExitText(const u8 **str1, const u8 **str2)
 {
     switch (sEasyChatScreen->type)
     {
-    case EASY_CHAT_TYPE_MAIL:
-        *str1 = gText_StopGivingPkmnMail;
-        *str2 = NULL;
-        break;
+    // case EASY_CHAT_TYPE_MAIL:
+    //     *str1 = gText_StopGivingPkmnMail;
+    //     *str2 = NULL;
+    //     break;
     case EASY_CHAT_TYPE_QUIZ_ANSWER:
     case EASY_CHAT_TYPE_QUIZ_QUESTION:
         *str1 = gText_LikeToQuitQuiz;
@@ -4106,7 +4106,8 @@ static void PrintCurrentPhrase(void)
 
             str = StringAppend(str, strClear);
 
-            if (frameId == FRAMEID_MAIL || frameId == FRAMEID_QUIZ_QUESTION || frameId == FRAMEID_QUIZ_SET_QUESTION)
+            // if (frameId == FRAMEID_MAIL || frameId == FRAMEID_QUIZ_QUESTION || frameId == FRAMEID_QUIZ_SET_QUESTION)
+            if (frameId == FRAMEID_QUIZ_QUESTION || frameId == FRAMEID_QUIZ_SET_QUESTION)
             {
                 // Is 2x5 frame, end on 9th word
                 if (j == 0 && i == 4)
@@ -4129,7 +4130,8 @@ static void BufferFrameTilemap(u16 *tilemap)
 
     frameId = GetEasyChatScreenFrameId();
     CpuFastFill(0, tilemap, BG_SCREEN_SIZE);
-    if (frameId == FRAMEID_MAIL || frameId == FRAMEID_QUIZ_SET_QUESTION)
+    // if (frameId == FRAMEID_MAIL || frameId == FRAMEID_QUIZ_SET_QUESTION)
+    if (frameId == FRAMEID_QUIZ_SET_QUESTION)
     {
         // These frames fill the screen, no need to draw top/bottom edges
         right = sPhraseFrameDimensions[frameId].left + sPhraseFrameDimensions[frameId].width;
@@ -5576,11 +5578,11 @@ void InitEasyChatPhrases(void)
     for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
         gSaveBlock1Ptr->easyChatBattleLost[i] = sDefaultBattleLostWords[i];
 
-    for (i = 0; i < MAIL_COUNT; i++)
-    {
-        for (j = 0; j < MAIL_WORDS_COUNT; j++)
-            gSaveBlock1Ptr->mail[i].words[j] = EC_EMPTY_WORD;
-    }
+    // for (i = 0; i < MAIL_COUNT; i++)
+    // {
+    //     for (j = 0; j < MAIL_WORDS_COUNT; j++)
+    //         gSaveBlock1Ptr->mail[i].words[j] = EC_EMPTY_WORD;
+    // }
 
 #ifndef UBFIX
     // BUG: This is supposed to clear 64 bits, but this loop is clearing 64 bytes.

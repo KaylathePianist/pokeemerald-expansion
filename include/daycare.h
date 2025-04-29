@@ -3,17 +3,17 @@
 
 #include "constants/daycare.h"
 
-struct RecordMixingDaycareMail
-{
-    struct DaycareMail mail[DAYCARE_MON_COUNT];
-    u32 numDaycareMons;
-    bool16 cantHoldItem[DAYCARE_MON_COUNT];
-};
+// struct RecordMixingDaycareMail
+// {
+//     struct DaycareMail mail[DAYCARE_MON_COUNT];
+//     u32 numDaycareMons;
+//     bool16 cantHoldItem[DAYCARE_MON_COUNT];
+// };
 
 u8 *GetMonNicknameVanilla(struct Pokemon *mon, u8 *dest);
 u8 *GetBoxMonNickname(struct BoxPokemon *mon, u8 *dest);
 u8 CountPokemonInDaycare(struct DayCare *daycare);
-void InitDaycareMailRecordMixing(struct DayCare *daycare, struct RecordMixingDaycareMail *mixMail);
+// void InitDaycareMailRecordMixing(struct DayCare *daycare, struct RecordMixingDaycareMail *mixMail);
 s8 Daycare_FindEmptySpot(struct DayCare *daycare);
 void StoreSelectedPokemonInDaycare(void);
 u16 TakePokemonFromDaycare(void);
