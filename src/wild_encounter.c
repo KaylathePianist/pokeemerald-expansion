@@ -452,7 +452,10 @@ enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area
     }
 
     if (wildMonInfo == NULL && !OW_TIME_OF_DAY_DISABLE_FALLBACK) 
-        return OW_TIME_OF_DAY_FALLBACK;
+        if (timeOfDay == TIME_MORNING)
+            return TIME_DAY;
+        else
+            return TIME_NIGHT;
     else
         return timeOfDay;
 }
