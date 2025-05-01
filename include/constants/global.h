@@ -59,9 +59,9 @@
 #define DAYCARE_MON_COUNT 2
 #define POKEBLOCKS_COUNT 1
 #define OBJECT_EVENTS_COUNT 16
-#define MAIL_COUNT 1
+// #define MAIL_COUNT 1
 #define SECRET_BASES_COUNT 1
-#define POKE_NEWS_COUNT 16
+#define POKE_NEWS_COUNT 1
 #define PC_ITEMS_COUNT 50
 #define BAG_ITEMS_COUNT 99
 #define BAG_KEYITEMS_COUNT 30
@@ -73,12 +73,12 @@
 #define DECOR_MAX_PLAYERS_HOUSE 5
 #define APPRENTICE_COUNT 2
 #define APPRENTICE_MAX_QUESTIONS 2
-#define MAX_REMATCH_ENTRIES 78 // only REMATCH_TABLE_ENTRIES (78) are used
+#define MAX_REMATCH_ENTRIES 15 // only REMATCH_TABLE_ENTRIES (78) are used
 #define NUM_CONTEST_WINNERS 13
 #define UNION_ROOM_KB_ROW_COUNT 10
 #define GIFT_RIBBONS_COUNT 11
 #define SAVED_TRENDS_COUNT 5
-#define PYRAMID_BAG_ITEMS_COUNT 10
+#define PYRAMID_BAG_ITEMS_COUNT 5
 #define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
 
 // Number of facilities for Ranking Hall.
