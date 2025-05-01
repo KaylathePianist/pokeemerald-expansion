@@ -2440,7 +2440,7 @@ static void Task_KeyItemWheel(u8 taskId) {
             if (j == WINDOW_NONE)
                 continue;
             PutWindowTilemap(j);
-            BlitItemIconToWindow(gSaveBlock1Ptr->registeredItems[i], j, 4, 4, i == 3 ? sKeyItemWheelExtraPalette : NULL);
+            BlitItemIconToWindow(gSaveBlock1Ptr->registeredItems[i], j, 4, 4);
             CopyWindowToVram(j, COPYWIN_FULL);
         }
         SetHBlankCallback(HBlankCB_KeyItemWheel);

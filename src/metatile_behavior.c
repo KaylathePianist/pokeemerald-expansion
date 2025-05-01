@@ -53,7 +53,6 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_IMPASSABLE_NORTHWEST]               = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_SOUTHEAST]               = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_SOUTHWEST]               = TILE_FLAG_UNUSED,
-    [MB_JUMP_NORTHEAST]                     = TILE_FLAG_UNUSED,
     [MB_JUMP_NORTHWEST]                     = TILE_FLAG_UNUSED,
     [MB_JUMP_SOUTHEAST]                     = TILE_FLAG_UNUSED,
     [MB_JUMP_SOUTHWEST]                     = TILE_FLAG_UNUSED,
@@ -177,6 +176,14 @@ bool8 MetatileBehavior_IsJumpNorth(u8 metatileBehavior)
 bool8 MetatileBehavior_IsJumpSouth(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_JUMP_SOUTH)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsOmnidirectionalJump(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_OMNIDIRECTIONAL_JUMP)
         return TRUE;
     else
         return FALSE;

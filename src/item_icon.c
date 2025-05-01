@@ -125,7 +125,7 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId)
     }
 }
 
-u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDest) {
+u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y) {
 
     if (!AllocItemIconTemporaryBuffers())
         return 16;
@@ -135,20 +135,9 @@ u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDes
     CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
     BlitBitmapToWindow(windowId, gItemIcon4x4Buffer, x, y, 32, 32);
 
-    if (paletteDest) {
-        u8 *tempBuffer = Alloc(0x20);
-
-        LZDecompressWram(GetItemIconPalette(itemId), tempBuffer);
-        CpuFastCopy(tempBuffer, paletteDest, PLTT_SIZE_4BPP);
-        Free(tempBuffer);
-
-    } else {
-
-        LoadCompressedPalette(GetItemIconPalette(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
-    }
+    LoadCompressedPalette(GetItemIconPalette(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
 
     FreeItemIconTemporaryBuffers();
-
     return 0;
 }
 

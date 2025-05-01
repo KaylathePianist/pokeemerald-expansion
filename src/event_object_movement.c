@@ -9773,6 +9773,8 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
 
     if (ledgeBehaviorFuncs[index](behavior) == TRUE)
         return index + 1;
+    else if (MetatileBehavior_IsOmnidirectionalJump(behavior) == TRUE)
+        return index + 1;
 
     return DIR_NONE;
 }
