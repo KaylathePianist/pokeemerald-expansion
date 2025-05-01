@@ -5564,7 +5564,8 @@ static u16 GetRandomUnlockedEasyChatPokemon(void)
 
 void InitEasyChatPhrases(void)
 {
-    u16 i, j;
+    // u16 i, j;
+    u16 i;
 
     for (i = 0; i < ARRAY_COUNT(sDefaultProfileWords); i++)
         gSaveBlock1Ptr->easyChatProfile[i] = sDefaultProfileWords[i];
