@@ -2550,7 +2550,7 @@ static const u8 *BattleStringGetPlayerName(u8 *text, u8 battler)
         }
         else if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
         {
-            if (gPartnerSpriteId == TRAINER_BACK_PIC_BRENDAN || gPartnerSpriteId == TRAINER_BACK_PIC_MAY)
+            if (GetTrainerPicFromId(gPartnerTrainerId) == TRAINER_BACK_PIC_BRENDAN || GetTrainerPicFromId(gPartnerTrainerId) == TRAINER_BACK_PIC_MAY)
                 {
                     toCpy = gSaveBlock2Ptr->rivalName;
                 }

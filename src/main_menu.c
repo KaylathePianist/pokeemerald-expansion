@@ -7,6 +7,7 @@
 #include "data.h"
 #include "decompress.h"
 #include "event_data.h"
+#include "event_scripts.h"
 #include "field_effect.h"
 #include "gpu_regs.h"
 #include "graphics.h"
@@ -224,6 +225,7 @@ static void Task_NewGameBirchSpeech_SlideInNewGenderSprite(u8);
 static void Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint(u8);
 static void Task_NewGameBirchSpeech_WaitPressBeforeNameChoice(u8);
 static void Task_NewGameBirchSpeech_StartNamingScreen(u8);
+void NameRival(void);
 static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void);
 static void Task_NewGameBirchSpeech_CreateNameYesNo(u8);
 static void Task_NewGameBirchSpeech_ProcessNameYesNoMenu(u8);
@@ -1624,6 +1626,16 @@ static void Task_NewGameBirchSpeech_StartNamingScreen(u8 taskId)
         DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
     }
 }
+
+void NameRival(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        StringCopy(gSaveBlock2Ptr->rivalName, sFemalePresetNames[Random() % NUM_PRESET_NAMES]); // choose a random name from gFemalePresetNames for a male player's rival
+    else
+        StringCopy(gSaveBlock2Ptr->rivalName, sMalePresetNames[Random() % NUM_PRESET_NAMES]); // choose a random name from gMalePresetNames for a female player's rival
+    DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock2Ptr->rivalName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
 
 static void Task_NewGameBirchSpeech_SoItsPlayerName(u8 taskId)
 {
