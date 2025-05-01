@@ -2419,13 +2419,12 @@ static void FreeKeyItemWheelGfx(s16 *data) {
 static void Task_KeyItemWheel(u8 taskId) {
     u32 i, j;
     s16 *data = gTasks[taskId].data;
-    struct Sprite *sprite;
     switch (tState)
     {
     case 0:
     {
         LoadSpritePalette(&sSpritePalette_KeyItemBox);
-        LoadSpriteSheetByTemplate(&sSpriteTemplate_KeyItemBox, 0);
+        LoadSpriteSheetByTemplate(&sSpriteTemplate_KeyItemBox, 0, 0);
 
         for (i = 0; i < MAX_REGISTERED_ITEMS; i++) {
             // Create box sprite
@@ -2453,7 +2452,7 @@ static void Task_KeyItemWheel(u8 taskId) {
     }
     case 1: // process input
     {
-        if (JOY_NEW(B_BUTTON) || JOY_NEW(SELECT_BUTTON)) {
+        if (JOY_NEW(B_BUTTON)) {
             PlaySE(SE_SELECT);
             tState = 3; // destroy and unfreeze
             break;
