@@ -80,6 +80,7 @@
 #define SAVED_TRENDS_COUNT 5
 #define PYRAMID_BAG_ITEMS_COUNT 5
 #define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
+#define MAX_REGISTERED_ITEMS 4
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.
