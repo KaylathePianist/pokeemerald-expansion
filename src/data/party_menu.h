@@ -802,6 +802,7 @@ static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =
 #if OW_DEFOG_FIELD_MOVE == TRUE
     [FIELD_MOVE_DEFOG]        = MOVE_DEFOG,
 #endif
+    [FIELD_MOVE_ROCK_CLIMB]   = MOVE_ROCK_CLIMB,
     // NOTE: This value is used as the terminal value for the table. There's no reason to do this, as the size of the table is known.
     //       Whichever move shares this value (MOVE_SWORDS_DANCE by default) if present will be treated as the end of the array rather than a field move.
     [FIELD_MOVES_COUNT]       = FIELD_MOVES_COUNT
@@ -830,6 +831,7 @@ struct
 #if OW_DEFOG_FIELD_MOVE == TRUE
     [FIELD_MOVE_DEFOG]        = {SetUpFieldMove_Defog,       PARTY_MSG_CANT_USE_HERE},
 #endif
+    [FIELD_MOVE_ROCK_CLIMB]   = {SetUpFieldMove_RockClimb,   PARTY_MSG_CANT_USE_HERE},
 };
 
 static const u8 *const sUnionRoomTradeMessages[] =
