@@ -2499,6 +2499,8 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
     else
     {
         toCpy = GetTrainerNameFromId(trainerId);
+        if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_RIVAL_NAME)
+            toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
     }
 
     return toCpy;
@@ -2548,8 +2550,15 @@ static const u8 *BattleStringGetPlayerName(u8 *text, u8 battler)
         }
         else if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
         {
-            GetFrontierTrainerName(text, gPartnerTrainerId);
-            toCpy = text;
+            if (gPartnerSpriteId == TRAINER_BACK_PIC_BRENDAN || gPartnerSpriteId == TRAINER_BACK_PIC_MAY)
+                {
+                    toCpy = gSaveBlock2Ptr->rivalName;
+                }
+              else
+                {
+                    GetFrontierTrainerName(text, gPartnerTrainerId);
+                    toCpy = text;
+                }
         }
         else
         {
@@ -3030,6 +3039,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
             case B_TXT_ATK_TRAINER_NAME:
                 toCpy = BattleStringGetTrainerName(text, multiplayerId, gBattlerAttacker);
                 break;
+            case B_TXT_RIVAL_NAME:
+                toCpy = gSaveBlock2Ptr->rivalName;
+                break;
             case B_TXT_ATK_TRAINER_CLASS:
                 switch (GetBattlerPosition(gBattlerAttacker))
                 {
@@ -3142,6 +3154,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
             case B_TXT_SCR_ACTIVE_NAME_WITH_PREFIX2:
                 HANDLE_NICKNAME_STRING_LOWERCASE(gBattleScripting.battler)
                 break;
+
             }
 
             if (toCpy != NULL)
