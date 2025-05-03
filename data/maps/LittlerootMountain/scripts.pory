@@ -1,0 +1,13 @@
+mapscripts LittlerootMountain_MapScripts {}
+
+script LittlerootMountain_RockSign {
+    lockall
+    msgbox("WARNING: Sharp rocks ahead!")
+    releaseall
+}
+
+script LittlerootMountain_CaveSign {
+    lockall
+    msgbox("LITTLEROOT MOUNTAIN\nWe aren't sure why we call it little.")
+    releaseall
+}

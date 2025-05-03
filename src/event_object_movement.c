@@ -9773,7 +9773,7 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
 
     if (ledgeBehaviorFuncs[index](behavior) == TRUE)
         return index + 1;
-    else if (MetatileBehavior_IsOmnidirectionalJump(behavior) == TRUE)
+    else if (MetatileBehavior_IsOmnidirectionalJump(behavior) == TRUE || (MetatileBehavior_IsJumpWater(behavior) == TRUE && !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)))
         return index + 1;
 
     return DIR_NONE;

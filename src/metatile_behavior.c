@@ -53,7 +53,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_IMPASSABLE_NORTHWEST]               = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_SOUTHEAST]               = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_SOUTHWEST]               = TILE_FLAG_UNUSED,
-    [MB_JUMP_NORTHWEST]                     = TILE_FLAG_UNUSED,
+    [MB_JUMP_WATER]                         = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_JUMP_SOUTHEAST]                     = TILE_FLAG_UNUSED,
     [MB_JUMP_SOUTHWEST]                     = TILE_FLAG_UNUSED,
     [MB_WALK_EAST]                          = TILE_FLAG_UNUSED,
@@ -189,6 +189,14 @@ bool8 MetatileBehavior_IsOmnidirectionalJump(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsJumpWater(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_JUMP_WATER)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsPokeGrass(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_LONG_GRASS)
@@ -216,6 +224,7 @@ bool8 MetatileBehavior_IsDeepSand(u8 metatileBehavior)
 bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_POND_WATER
+     || metatileBehavior == MB_JUMP_WATER
      || metatileBehavior == MB_PUDDLE
      || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
      || metatileBehavior == MB_ICE
@@ -728,6 +737,7 @@ bool8 MetatileBehavior_IsPlayerRoomPCOn(u8 metatileBehavior)
 bool8 MetatileBehavior_HasRipples(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_POND_WATER
+     || metatileBehavior == MB_JUMP_WATER
      || metatileBehavior == MB_PUDDLE
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER)
         return TRUE;
@@ -1180,6 +1190,7 @@ bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_POND_WATER
      || metatileBehavior == MB_OCEAN_WATER
+     || metatileBehavior == MB_JUMP_WATER
      || metatileBehavior == MB_INTERIOR_DEEP_WATER
      || metatileBehavior == MB_DEEP_WATER
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER

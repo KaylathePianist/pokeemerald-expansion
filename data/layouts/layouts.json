@@ -1964,7 +1964,7 @@
     {
       "id": "LAYOUT_SECRET_BASE_RED_CAVE1",
       "name": "SecretBase_RedCave1_Layout",
-      "width": 11,
+      "width": 14,
       "height": 9,
       "primary_tileset": "gTileset_SecretBase",
       "secondary_tileset": "gTileset_SecretBaseRedCave",
@@ -4410,6 +4410,86 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_LITTLEROOT",
+      "name": "SouthLittleroot_Layout",
+      "width": 20,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/SouthLittleroot/border.bin",
+      "blockdata_filepath": "data/layouts/SouthLittleroot/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MOUNTAIN",
+      "name": "LittlerootMountain_Layout",
+      "width": 90,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/LittlerootMountain/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMountain/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MOUNTAIN_B1",
+      "name": "LittlerootMountain_B1_Layout",
+      "width": 36,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LittlerootMountain_B1/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMountain_B1/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MOUNTAIN_ROOM",
+      "name": "LittlerootMountain_Room_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LittlerootMountain_Room/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMountain_Room/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MOUNTAIN_B2",
+      "name": "LittlerootMountain_B2_Layout",
+      "width": 37,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LittlerootMountain_B2/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMountain_B2/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MOUNTAIN_F1",
+      "name": "LittlerootMountain_F1_Layout",
+      "width": 27,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LittlerootMountain_F1/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMountain_F1/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MOUNTAIN_F2",
+      "name": "LittlerootMountain_F2_Layout",
+      "width": 30,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LittlerootMountain_F2/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMountain_F2/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP1",
+      "name": "NewMap1_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/NewMap1/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap1/map.bin"
     }
   ]
 }

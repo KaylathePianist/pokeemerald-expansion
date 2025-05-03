@@ -1155,3 +1155,19 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+
+	.include "data/maps/SouthLittleroot/scripts.inc"
+
+	.include "data/maps/LittlerootMountain/scripts.inc"
+
+	.include "data/maps/LittlerootMountain_B1/scripts.inc"
+
+	.include "data/maps/LittlerootMountain_Room/scripts.inc"
+
+	.include "data/maps/LittlerootMountain_B2/scripts.inc"
+
+	.include "data/maps/LittlerootMountain_F1/scripts.inc"
+
+	.include "data/maps/LittlerootMountain_F2/scripts.inc"
+
+	.include "data/maps/NewMap1/scripts.inc"

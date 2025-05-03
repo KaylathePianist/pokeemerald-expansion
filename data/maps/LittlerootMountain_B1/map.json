@@ -1,0 +1,109 @@
+{
+  "id": "MAP_LITTLEROOT_MOUNTAIN_B1",
+  "name": "LittlerootMountain_B1",
+  "layout": "LAYOUT_LITTLEROOT_MOUNTAIN_B1",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_ROCK_TUNNEL",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_UNUSED_0x041"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN_B2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN_B2",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 30,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN_B2",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN_B2",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 34,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN_B2",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 34,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_MOUNTAIN_F1",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "item": "ITEM_GREAT_BALL",
+      "flag": "FLAG_UNUSED_0x040"
+    }
+  ]
+}
