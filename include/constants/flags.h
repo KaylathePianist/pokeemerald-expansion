@@ -101,7 +101,8 @@
 #define FLAG_DEXNAV_SEARCHING                0x54  // DEXNAV
 #define FLAG_DEXNAV_DETECTOR                 0x55  // DEXNAV
 
-#define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
+#define FLAG_HAS_DUAL_BIKE                   0x56  // Always set after new game, object it hides is added directly
+
 #define FLAG_MET_RIVAL_MOM                   0x57
 #define FLAG_BIRCH_AIDE_MET                  0x58
 #define FLAG_DECLINED_BIKE                   0x59

@@ -9,6 +9,8 @@
 #include "sound.h"
 #include "constants/map_types.h"
 #include "constants/songs.h"
+#include "constants/flags.h"
+#include "event_data.h"
 
 // this file's functions
 static void MovePlayerOnMachBike(u8, u16, u16);
@@ -131,7 +133,7 @@ void MovePlayerOnBike(u8 direction, u16 newKeys, u16 heldKeys)
     else
         MovePlayerOnAcroBike(direction, newKeys, heldKeys);
 
-    if (heldKeys & R_BUTTON)
+    if ((heldKeys & R_BUTTON) && (FlagGet(FLAG_HAS_DUAL_BIKE)))
     {
         if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
         {

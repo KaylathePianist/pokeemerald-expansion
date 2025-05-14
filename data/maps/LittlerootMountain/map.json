@@ -22,6 +22,11 @@
       "map": "MAP_NEW_MAP1",
       "offset": 68,
       "direction": "down"
+    },
+    {
+      "map": "MAP_NEW_MAP2",
+      "offset": 6,
+      "direction": "down"
     }
   ],
   "object_events": [

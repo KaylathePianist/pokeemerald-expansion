@@ -1171,3 +1171,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootMountain_F2/scripts.inc"
 
 	.include "data/maps/NewMap1/scripts.inc"
+
+	.include "data/maps/NewMap2/scripts.inc"
